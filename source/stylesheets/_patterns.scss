@@ -1,0 +1,14 @@
+@include keyframe(fadein) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+}
+
+%p-fade-in {
+  @include animation(fadein 2s 2s forwards);
+  // @include prefix(animation-fill-mode, fowards);
+}

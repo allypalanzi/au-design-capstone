@@ -1,0 +1,50 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin prefix ($property, $value,
+                 $moz:    true,
+                 $webkit: true,
+                 $o:      false,
+                 $ms:     true,
+                 $spec:   true) {
+    @if $moz    {    -moz-#{$property}: $value; }
+    @if $webkit { -webkit-#{$property}: $value; }
+    @if $o      {      -o-#{$property}: $value; }
+    @if $ms     {     -ms-#{$property}: $value; }
+    @if $spec   {         #{$property}: $value; }
+}
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-o-keyframes $animation_name {
+        @content;
+    }
+ 
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+@mixin animation ($animate) {
+    -webkit-animation: $animate;
+    -moz-animation: $animate;
+    -o-animation: $animate;
+    animation: $animate;
+
+}
