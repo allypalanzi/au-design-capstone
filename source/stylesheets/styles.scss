@@ -13,13 +13,13 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
 
-$main-color: #5b1b93;
+$main-color: #9c1830;
 
 p {
   font-family: "Vollkorn";
   font-size: 20px;
   line-height: 32px;
-  color: #fff;
+  color: #333;
   margin-bottom: 30px;
 }
 .grid {
@@ -59,24 +59,25 @@ p {
 
 .m-hero__title {
   @extend %p-fade-in;
-  color: #fff;
-  font-family: "Playfair Display";
+  color: $main-color;
+  font-family: "Oswald";
   font-size: 140px;
-  font-style: italic;
+  // font-style: italic;
   font-weight: 900;
+  text-transform: uppercase;
   margin: 0 auto;
   opacity: 0;
   padding: 7% 10% 8% 10%;
-  text-shadow: 3px 1px $main-color;
+  text-shadow: 3px 1px #fff;
 }
 
 .m-section {
   @extend %clearfix;
   min-height: 100vh;
   width: 100%;
-  background-color: #2b2b2b;
+  background-color: #edeae5;
   &.black {
-    background-color: #000;
+    background-color: #fff;
   }
   border-top: 5px solid $main-color;
 }
@@ -111,8 +112,7 @@ p {
   &.quote-center {
     font-size: 40px;
     line-height: 50px;
-    color: #fff;
-  text-shadow: 2px 1px $main-color;
+    color: #001c33;
 
   }
 }
