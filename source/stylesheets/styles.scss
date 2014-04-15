@@ -12,8 +12,21 @@
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
+$main-color: #378dca;
+$accent-color: #f9f3af;
+$background: #f4f4f4;
+$red: #f02f30;
 
-$main-color: #9c1830;
+$headline: "Oswald";
+
+h2 {
+  font-family: $headline;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
 
 p {
   font-family: "Vollkorn";
@@ -60,32 +73,33 @@ p {
 .m-hero__title {
   @extend %p-fade-in;
   color: $main-color;
-  font-family: "Oswald";
+  font-family: $headline;
   font-size: 140px;
+  line-height: 150px;
   // font-style: italic;
   font-weight: 900;
   text-transform: uppercase;
   margin: 0 auto;
   opacity: 0;
   padding: 7% 10% 8% 10%;
-  text-shadow: 3px 1px #fff;
+  text-shadow: 2px 1px #fff;
 }
 
 .m-section {
   @extend %clearfix;
   min-height: 100vh;
   width: 100%;
-  background-color: #edeae5;
+  background-color: $background;
   &.black {
-    background-color: #fff;
+    background-color: $red;
   }
-  border-top: 5px solid $main-color;
+  border-top: 5px solid $accent-color;
 }
 
 .m-section__intro {
   p:first-child:first-letter { 
     float: left; 
-    color: $main-color;
+    color: $red;
     font-size: 100px;
     font-weight: 900;
     font-family: "Playfair Display";
@@ -95,33 +109,56 @@ p {
 }
 
 .m-section__quote {
-
   position: relative;
   font-family: "Vollkorn";
-  font-size: 60px;
-  line-height: 70px;
   font-style: italic;
   font-weight: 400;
   &.quote-right {
     float: right;
     margin-top: 30%;
     max-width: 700px;
-
+    margin-right: 5%;
   }
 
   &.quote-center {
     font-size: 40px;
     line-height: 50px;
-    color: #001c33;
+    
+    .black & {
+      color: #fff;
+    }
 
+  }
+
+  &.quote-left {
+  float: left;
+  max-width: 700px;
+  margin-top: 20%;
+  margin-left: 5%;
+  
   }
 }
 
-.ngan {
-  background: url(../images/ngan.jpg); 
+.julie {
+  background: url(../images/julie.jpg); 
   @include prefix(background-size, cover);
   background-attachment: fixed; 
-  color: $main-color;
-    text-shadow: 2px 1px #fff;
+  color: #000;
+  font-size: 30px;
+  line-height: 40px;
+  // text-shadow: 1px 1px #fff;
+}
 
+.ngan {
+  background: url(../images/ngankat2.jpg); 
+  @include prefix(background-size, cover);
+  background-attachment: fixed; 
+  color: $red;
+  font-size: 60px;
+  text-shadow: 1px 1px #fff;
+}
+
+cite {
+  display: block;
+  font-size: 20px;
 }
