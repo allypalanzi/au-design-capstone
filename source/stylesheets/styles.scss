@@ -19,6 +19,10 @@ $red: #f02f30;
 
 $headline: "Oswald";
 
+* {
+  box-sizing: border-box;
+}
+
 h2 {
   font-family: $headline;
   font-size: 40px;
@@ -35,44 +39,73 @@ p {
   color: #333;
   margin-bottom: 30px;
 }
+
+em {
+  font-style: italic;
+  color: $red;
+  font-size: 24px;
+  background-color: $accent-color;
+  padding: 0 5px;
+}
+
+strong {
+  color: $main-color;
+  font-size: 30px;
+  display: block;
+}
+
+.segway {
+  font-size: 22px;
+  text-align: center;
+  line-height: 30px;
+  font-style: italic;
+  color: #555;
+}
+
 .grid {
   @extend %grid;
 }
 
-.m-two {
-  @extend %grid-u-1-2;
+.m-three {
+  @extend %grid-u-1-3;
+  margin: 0 auto;
+  padding: 50px;
 }
 
-.m-three {
+.m-two {
+  @extend %grid-u-1-2;
+  margin: 0 auto;
+}
+
+.m-two-five {
   @extend %grid-u-2-5;
-  height: 100vh;
   margin: 0 auto;
 }
 
 .m-one {
   @extend %grid-u-4-5;
   margin: 0 auto;
-  height: 100vh;
 }
 
-.vertical-center {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+// .vertical-center {
+//   position: relative;
+//   top: 50%;
+//   -webkit-transform: translateY(-50%);
+//   -ms-transform: translateY(-50%);
+//   transform: translateY(-50%);
+// }
 
 .m-hero {
-  background: url(../images/ramla-color.jpg);
-  @include prefix(background-size, cover);
+  // background: url(../images/ramla-color.jpg);
+  // @include prefix(background-size, cover);
+  background: $red;
   background-attachment: fixed;
   background-position: top;
 }
 
 .m-hero__title {
   @extend %p-fade-in;
-  color: $main-color;
+  color: $background;
   font-family: $headline;
   font-size: 140px;
   line-height: 150px;
@@ -82,30 +115,42 @@ p {
   margin: 0 auto;
   opacity: 0;
   padding: 7% 10% 8% 10%;
-  text-shadow: 2px 1px #fff;
 }
 
 .m-section {
   @extend %clearfix;
-  min-height: 100vh;
   width: 100%;
   background-color: $background;
-  &.black {
+  padding: 100px 0;
+  &.red {
     background-color: $red;
+    color: #fff;
+  }
+  &.blue {
+    background-color: $main-color;
   }
   border-top: 5px solid $accent-color;
 }
 
 .m-section__intro {
-  p:first-child:first-letter { 
+  p:nth-child(1):first-letter { 
     float: left; 
-    color: $red;
+    color: $main-color;
     font-size: 100px;
     font-weight: 900;
     font-family: "Playfair Display";
     line-height: 85px;
     padding: 0 10px 0px 5px;
   }
+  padding: 0 0 100px 0;
+}
+
+.dek {
+   font-size: 45px;
+   text-align: center;
+   color: #ccc;
+   font-style: italic;
+   padding: 100px 0 50px 0;
 }
 
 .m-section__quote {
@@ -115,7 +160,7 @@ p {
   font-weight: 400;
   &.quote-right {
     float: right;
-    margin-top: 30%;
+    margin-top: 5%;
     max-width: 700px;
     margin-right: 5%;
   }
@@ -124,19 +169,22 @@ p {
     font-size: 40px;
     line-height: 50px;
     
-    .black & {
+    .black &, .blue &{
       color: #fff;
+      cite {
+        color: #fff;
+      }
     }
 
   }
 
   &.quote-left {
-  float: left;
-  max-width: 700px;
-  margin-top: 20%;
-  margin-left: 5%;
-  
-  }
+    float: left;
+    max-width: 700px;
+    margin-top: 20%;
+    margin-left: 5%;
+    
+    }
 }
 
 .julie {
@@ -160,5 +208,7 @@ p {
 
 cite {
   display: block;
-  font-size: 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  font-style: italic;
 }
