@@ -24,6 +24,10 @@ $headline: "Oswald";
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 h2 {
   font-family: $headline;
   font-size: 40px;
