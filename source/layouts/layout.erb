@@ -19,14 +19,16 @@ nv.addGraph(function() {
       .x(function(d) { return d.degree })
       .y(function(d) { return d.percent })
       .showLabels(true)     //Display pie labels
-      .color(["#378dca","#f9f3af","#f02f30"]);
-d3.select(".nv-legendWrap")
-  .attr("transform", "translate(100,100)");
+      .showLegend(false)
+      .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
 
     d3.select("#degrees svg")
         .datum(degrees)
         .transition().duration(1200)
         .call(chart);
+
+        slices.attr('stroke', "none");
+
 
   return chart;
 });
