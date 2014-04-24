@@ -32,6 +32,10 @@ nv.addGraph(function() {
 
   return chart;
 });
+function tooltipContent(key, y, e, graph) {
+            return '<h3>' + y + '</h3>' +'<p>' + key + '</p>' ;
+        }
+        tooltipContent();
 
 degrees = [
     {

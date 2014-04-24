@@ -224,6 +224,17 @@ strong {
   text-shadow: 1px 1px #fff;
 }
 
+.ramla {
+    background: url(../images/ramla.jpg); 
+  @include prefix(background-size, cover);
+  background-attachment: fixed; 
+  color: #fff;
+  font-size: 30px;
+  line-height: 40px;
+    text-shadow: 1px 1px #000;
+
+}
+
 cite {
   display: block;
   font-size: 18px;
