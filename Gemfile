@@ -2,8 +2,6 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-set :relative_links, true
-
 gem "sass"
 
 gem "middleman", "~>3.2.2"

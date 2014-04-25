@@ -3,7 +3,7 @@ compass_config do |config|
 end
 
 activate :livereload
-
+set :relative_links, true
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
