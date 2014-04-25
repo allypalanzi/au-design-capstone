@@ -7,14 +7,13 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "The Middleman" %></title>
+    <title><%= current_page.data.title || "Women in Tech" %></title>
     
     <%= stylesheet_link_tag "styles" %>
     <%= javascript_include_tag  "all" %>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <%= javascript_include_tag  "nv.d3.min" %>
-    <%= javascript_include_tag "canvasjs.min.js" %>
-    <script>
+   <script>
 nv.addGraph(function() {
   var degreeChart = nv.models.pieChart()
       .x(function(d) { return d.degree })
@@ -63,7 +62,25 @@ nv.addGraph(function() {
         .transition().duration(1200)
         .call(engineerChart);
 
+  var womenPerTeamChart = nv.models.discreteBarChart()
+      .x(function(d) { return d.label })    //Specify the data accessors.
+      .y(function(d) { return d.percent })
+      .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+      .tooltips(false)        //Don't show tooltips
+      .showValues(true)       //...instead, show the bar value right on top of each bar.
+      .transitionDuration(350)
+      .height(500)
+      .forceY([0,100])
 
+      .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
+    womenPerTeamChart.yAxis.axisLabel('Percent');
+    womenPerTeamChart.xAxis.axisLabel('Team Size');
+
+
+
+  d3.select('#womenPerTeam svg')
+      .datum(womenPerTeam())
+      .call(womenPerTeamChart);
 
   return chart;
 });
@@ -253,6 +270,36 @@ degrees = [
     "description": "all other college majors"
   }
 ]
+function womenPerTeam() {
+ return  [ 
+    {
+      key: "Cumulative Return",
+      values: [
+  {
+    "label":"1-9",
+    "percent": 20
+  },
+  {
+    "label": "10-24",
+    "percent": 15
+  },
+  {
+    "label": "15-49",
+    "percent": 13
+  },
+  {
+    "label": "50-99",
+    "percent": 15
+  },
+  {
+    "label": "100+",
+    "percent": 10
+    },
+      ]
+    }
+  ]
+
+}
 
 </script>
 

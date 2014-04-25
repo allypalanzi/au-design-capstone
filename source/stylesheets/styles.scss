@@ -11,13 +11,15 @@
 @import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 
 $main-color: #378dca;
 $accent-color: #f9f3af;
 $background: #f4f4f4;
 $red: #f02f30;
 
-$headline: "Oswald";
+$headline: "Fjalla One";
 
 * {
   box-sizing: border-box;
@@ -38,7 +40,6 @@ h2 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 20px;
-  letter-spacing: 1px;
   @media(max-width: $break-medium) {
     font-size: 30px;
   }
@@ -244,10 +245,13 @@ strong {
     background: url(../images/ramla-color.jpg); 
   @include prefix(background-size, cover);
   background-attachment: fixed; 
-  color: #fff;
+  color: $main-color;
   font-size: 30px;
   line-height: 40px;
-    text-shadow: 1px 1px #000;
+    text-shadow: 1px 1px #fff;
+    h3 {
+      max-width: 70%;
+    }
 
 }
 
@@ -262,6 +266,12 @@ cite {
 #degrees {
   height: 100%;
   min-height: 500px;
+}
+
+#womenPerTeam{
+  width: 1000px;
+  margin: 0 auto;
+  height: 600px;
 }
 
 #humanSciences, #engineering {
@@ -279,3 +289,11 @@ height: 450px;
 }
 
 @import "nv.d3.min";
+
+.nv-axislabel {
+  font-family: $headline;
+  font-style: normal;
+  fill: $main-color;
+  font-size: 20px;
+  text-transform: uppercase;
+}
