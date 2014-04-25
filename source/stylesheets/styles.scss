@@ -27,6 +27,11 @@ img {
   max-width: 100%;
 }
 
+.image-wrap {
+  width: 60%;
+  margin: 0 auto;
+}
+
 h2 {
   font-family: $headline;
   font-size: 40px;
@@ -259,7 +264,7 @@ cite {
   min-height: 500px;
 }
 
-#humanSciences {
+#humanSciences, #engineering {
 height: 450px;
 }
 

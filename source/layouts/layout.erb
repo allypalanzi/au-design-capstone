@@ -20,7 +20,7 @@ nv.addGraph(function() {
       .x(function(d) { return d.degree })
       .y(function(d) { return d.percent })
       .tooltipContent(function (key, y, e, graph) {
-          return '<h3>' + y + '%</h3>';
+          return '<h3>' + Math.round(y) + '%</h3>';
       })
       .showLabels(true)     //Display pie labels
       .showLegend(false)
@@ -35,7 +35,7 @@ nv.addGraph(function() {
       .x(function(d) { return d.gender })
       .y(function(d) { return d.percent })
       .tooltipContent(function (key, y, e, graph) {
-          return '<h3>' + y + '%</h3>';
+          return '<h3>' + Math.round(y) + '%</h3>';
       })
       .showLabels(true)     //Display pie labels
       .showLegend(false)
@@ -46,6 +46,24 @@ nv.addGraph(function() {
         .datum(humanSciences)
         .transition().duration(1200)
         .call(humanChart);
+
+  var engineerChart = nv.models.pieChart()
+      .x(function(d) { return d.gender })
+      .y(function(d) { return d.percent })
+      .tooltipContent(function (key, y, e, graph) {
+          return '<h3>' + Math.round(y) + '%</h3>';
+      })
+      .showLabels(true)     //Display pie labels
+      .showLegend(false)
+      .height(400)
+      .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
+
+    d3.select("#engineering svg")
+        .datum(engineering)
+        .transition().duration(1200)
+        .call(engineerChart);
+
+
 
   return chart;
 });
@@ -139,6 +157,17 @@ humanSciences = [
   {
     "gender": "Women",
     "percent": 88
+  }
+]
+
+engineering = [
+  {
+    "gender":"Men",
+    "percent": 83
+  },
+  {
+    "gender": "Women",
+    "percent": 17
   }
 ]
 
