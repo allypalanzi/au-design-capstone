@@ -272,4 +272,10 @@ height: 450px;
   height: 100px;
 }
 
+.percent {
+  color: $main-color;
+  font-size: 40px;
+  font-family: $headline;
+}
+
 @import "nv.d3.min";
