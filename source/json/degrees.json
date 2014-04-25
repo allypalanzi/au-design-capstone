@@ -1,107 +1,107 @@
 [
     {
-    "degree": "Business",
-        "percent": 22,
+    "indexLabel": "Business",
+        "y": 22,
         "description": "management, marketing, and personal and culis"
   },
   {
-    "degree": "Social Studies",
-    "percent": 10,
+    "indexLabel": "Social Studies",
+    "y": 10,
     "description": "social science and history"
   },
   {
-    "degree": "Healthcare",
-    "percent": 8,
+    "indexLabel": "Healthcare",
+    "y": 8,
     "description": "health professions and related programs"
   },
   {
-    "degree": "Education",
-    "percent": 6,
+    "indexLabel": "Education",
+    "y": 6,
     "description": ""
   },
   {
-    "degree": "Psychology",
+    "indexLabel": "Psychology",
     "perfect": 6,
     "description": ""
   },
   {
-    "degree": "Visual Arts",
-    "percent": 6,
+    "indexLabel": "Visual Arts",
+    "y": 6,
     "description": "performing arts"
   },
   {
-    "degree": "Engineering",
-    "percent": 5,
+    "indexLabel": "Engineering",
+    "y": 5,
     "description": "engineering technologies"
   },
   {
-    "degree": "Biology",
-    "percent": 5,
+    "indexLabel": "Biology",
+    "y": 5,
     "description": "biomedical science"
   },
   {
-    "degree": "Communication",
-    "percent": 5,
+    "indexLabel": "Communication",
+    "y": 5,
     "description": "communications technologies"
   },
   {
-    "degree": "Computers",
-    "percent": 3.5,
+    "indexLabel": "Computers",
+    "y": 3.5,
     "description": "information sciences and support"
   },
   {
-    "degree": "English",
-    "percent": 3.5,
+    "indexLabel": "English",
+    "y": 3.5,
     "description": "language and literature"
   },
   {
-    "degree": "Liberal Arts",
-    "percent": 3,
+    "indexLabel": "Liberal Arts",
+    "y": 3,
     "description": "general studies and humanities"
   },
   {
-    "degree": "Multi",
-    "percent": 3,
+    "indexLabel": "Multi",
+    "y": 3,
     "description": "interdisciplinary studies"
   },
   {
-    "degree": "Law Enforcement",
-    "percent": 2,
+    "indexLabel": "Law Enforcement",
+    "y": 2,
     "description": "homeland security, firefighting and related protective services"
   },
   {
-    "degree": "Agriculture",
-    "percent": 2,
+    "indexLabel": "Agriculture",
+    "y": 2,
     "description": "natural resources"
   },
   {
-    "degree": "Public admin",
-    "percent": 1.5,
+    "indexLabel": "Public admin",
+    "y": 1.5,
     "description": "social service professions"
   },
   {
-    "degree": "Physical Sciences",
-    "percent": 1.5,
+    "indexLabel": "Physical Sciences",
+    "y": 1.5,
     "description": "science technologies"
   },
   {
-    "degree": "Parks Recreation",
-    "percent": 1,
+    "indexLabel": "Parks Recreation",
+    "y": 1,
     "description": "leisure and fitness studies"
   },
   {
-    "degree": "Human Sciences",
-    "percent": 1,
+    "indexLabel": "Human Sciences",
+    "y": 1,
     "description": ""
   },
   {
-    "degree": "Foreign Languages",
-    "percent": 1,
+    "indexLabel": "Foreign Languages",
+    "y": 1,
     "description": ""
   },
   {
-    "degree": "Other",
-    "percent": 4,
+    "indexLabel": "Other",
+    "y": 4,
     "description": "all other college majors"
   }
 ]

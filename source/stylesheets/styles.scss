@@ -6,7 +6,6 @@
 @import "grid";
 @import "patterns";
 @import "helpers";
-@import "nv.d3.min";
 
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700italic,900italic);
 @import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
@@ -38,6 +37,14 @@ h2 {
   @media(max-width: $break-medium) {
     font-size: 30px;
   }
+}
+
+h4 {
+  text-align: center;
+  color: $main-color;
+  font-style: italic;
+  font-size: 30px;
+  margin-top: 100px;
 }
 
 p {
@@ -229,7 +236,7 @@ strong {
 }
 
 .ramla {
-    background: url(../images/ramla.jpg); 
+    background: url(../images/ramla-color.jpg); 
   @include prefix(background-size, cover);
   background-attachment: fixed; 
   color: #fff;
@@ -252,6 +259,12 @@ cite {
   min-height: 500px;
 }
 
+#humanSciences {
+height: 450px;
+}
+
 .break {
   height: 100px;
 }
+
+@import "nv.d3.min";

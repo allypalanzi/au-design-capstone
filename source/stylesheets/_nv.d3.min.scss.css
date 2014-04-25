@@ -28,16 +28,14 @@
 
 .nvtooltip {
   position: absolute;
-  background-color: rgba(255,255,255,1.0);
-  padding: 1px;
-  border: 1px solid rgba(0,0,0,.2);
+  background-color: $background;
+  padding: 20px;
   z-index: 10000;
   font-family: "Volkorn";
   font-size: 13px;
   text-align: left;
   pointer-events: none;
-
-  white-space: nowrap;
+  border: 3px solid $accent-color;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -66,20 +64,19 @@
 }
 
 .nvtooltip h3 {
-  margin: 0;
-  padding: 4px 14px;
-  line-height: 18px;
-  font-weight: normal;
-  background-color: rgba(247,247,247,0.75);
+  font-size: 25px;
+    margin: 0;
   text-align: center;
-  font-family: "Volkorn";
+  font-family: "Oswald";
+  color: $red;
 }
 
 .nvtooltip p {
   margin: 0;
-  padding: 5px 14px;
+  font-size: 12px;
   text-align: center;
-  font-family: "Oswald";
+  font-family: "Volkorn";
+  text-transform: capitalize;
 }
 
 .nvtooltip span {
@@ -108,10 +105,7 @@
 
 .nvtooltip table tr.highlight td {
   padding: 1px 9px 1px 0;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-top-style: solid;
-  border-top-width: 1px;
+
 }
 
 .nvtooltip table td.legend-color-guide div {
@@ -152,11 +146,12 @@ svg {
 
 
 svg text {
-  font: normal 12px Arial;
+  font: normal 18px "Volkorn";
+  font-style: italic;
 }
 
 svg .title {
- font: bold 14px Arial;
+  font: normal 18px "Volkorn";
 }
 
 .nvd3 .nv-background {
@@ -324,7 +319,7 @@ svg .title {
   transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
   -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
   -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
-
+  cursor: pointer;
 }
 
 .nvd3.nv-pie .nv-slice text {
@@ -341,6 +336,7 @@ svg .title {
 
 .nvd3.nv-pie .hover path {
   fill-opacity: .4;
+  fill: $main-color;
 }
 .nvd3.nv-pie .nv-label {
   pointer-events: none;
