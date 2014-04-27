@@ -65,106 +65,105 @@ nv.addGraph(function() {
   var womenPerTeamChart = nv.models.discreteBarChart()
       .x(function(d) { return d.label })    //Specify the data accessors.
       .y(function(d) { return d.percent })
-      .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
       .tooltips(false)        //Don't show tooltips
       .showValues(true)       //...instead, show the bar value right on top of each bar.
       .transitionDuration(350)
       .height(500)
+      .width(1000)
       .forceY([0,100])
 
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
-    womenPerTeamChart.yAxis.axisLabel('Percent');
-    womenPerTeamChart.xAxis.axisLabel('Team Size');
-
-
+    womenPerTeamChart.yAxis.axisLabel('Percent').axisLabelDistance(40);
+    womenPerTeamChart.xAxis.axisLabel('Team Size').axisLabelDistance(40);
 
   d3.select('#womenPerTeam svg')
       .datum(womenPerTeam())
       .call(womenPerTeamChart);
 
+  var womenQuittingChart = nv.models.discreteBarChart()
+      .x(function(d) { return d.label })    //Specify the data accessors.
+      .y(function(d) { return d.percent })
+      .tooltips(false)        //Don't show tooltips
+      .showValues(true)       //...instead, show the bar value right on top of each bar.
+      .transitionDuration(350)
+      .height(400)
+      .width(700)
+      .forceY([0,100])
+
+      .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
+    womenPerTeamChart.yAxis.axisLabel('Percent').axisLabelDistance(40);
+    womenPerTeamChart.xAxis.axisLabel('Field').axisLabelDistance(40);
+
+  d3.select('#womenQuitting svg')
+      .datum(womenQuitting())
+      .call(womenQuittingChart);
+
+/*These lines are all chart setup.  Pick and choose which chart features you want to utilize. */
+nv.addGraph(function() {
+  var chart = nv.models.lineChart()
+                .margin({left: 100})  //Adjust chart margins to give the x-axis some breathing room.
+                .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
+                .transitionDuration(350)  //how fast do you want the lines to transition?
+                .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                .showYAxis(true)        //Show the y-axis
+                .showXAxis(true)        //Show the x-axis
+  ;
+
+  chart.xAxis     //Chart x-axis settings
+      .axisLabel('Time (ms)')
+      .tickFormat(d3.format(',r'));
+
+  chart.yAxis     //Chart y-axis settings
+      .axisLabel('Voltage (v)')
+      .tickFormat(d3.format('.02f'));
+
+  /* Done setting the chart up? Time to render it!*/
+  var myData = sinAndCos();   //You need data...
+
+  d3.select('#chart svg')    //Select the <svg> element you want to render the chart in.   
+      .datum(myData)         //Populate the <svg> element with chart data...
+      .call(chart);          //Finally, render the chart!
+
+  //Update the chart when window resizes.
+  nv.utils.windowResize(function() { chart.update() });
   return chart;
 });
+/**************************************
+ * Simple test data generator
+ */
+function sinAndCos() {
+  var sin = [],sin2 = [],
+      cos = [];
 
+  //Data is represented as an array of {x,y} pairs.
+  for (var i = 0; i < 100; i++) {
+    sin.push({x: i, y: Math.sin(i/10)});
+    sin2.push({x: i, y: Math.sin(i/10) *0.25 + 0.5});
+    cos.push({x: i, y: .5 * Math.cos(i/10)});
+  }
 
-// window.onload = function () {
+  //Line chart data should be sent as an array of series objects.
+  return [
+    {
+      values: sin,      //values - represents the array of {x,y} data points
+      key: 'Sine Wave', //key  - the name of the series.
+      color: '#ff7f0e'  //color - optional: choose your own line color.
+    },
+    {
+      values: cos,
+      key: 'Cosine Wave',
+      color: '#2ca02c'
+    },
+    {
+      values: sin2,
+      key: 'Another sine wave',
+      color: '#7777ff',
+      area: true      //area - set to true if you want this line to turn into a filled area chart.
+    }
+  ];
+}
 
-//         CanvasJS.addColorSet("redShades",
-//                 ["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
-//     var chart = new CanvasJS.Chart("chartContainer",
-//     {
-
-//         backgroundColor: "transparent",
-//         colorSet:  "redShades",
-
-
-
-//        data: [
-//       {
-//       type: "pie",
-//        showInLegend: false,
-//         backgroundColor: "transparent",
-
-//        // dataPoints: [
-//        // {  y: 4181563, legendText:"PS 3", indexLabel: "PlayStation 3" },
-//        // {  y: 2175498, legendText:"Wii", indexLabel: "Wii" },
-//        // {  y: 3125844, legendText:"Xbox", indexLabel: "Xbox 360" },
-//        // {  y: 1176121, legendText:"DS" , indexLabel: "Nintendo DS"},
-//        // {  y: 1727161, legendText:"PSP", indexLabel: "PSP" },
-//        // {  y: 4303364, legendText:"3DS" , indexLabel: "Nintendo 3DS"},
-//        // {  y: 1717786, legendText:"Vita" , indexLabel: "PS Vita"}
-//        // ]
-//        dataPoints: [
-//         // {indexLabel: "Business", y: 22, legendText: "management, marketing, and personal and culis"},
-//         // {indexLabel: "Social Studies", y: 10, legendText: "social science and history"},
-//         // {indexLabel: "Healthcare", y: 8, legendText: "health professions and related programs"},
-//         // {indexLabel: "Education", y: 6, legendText: "sdf"},
-//         // {indexLabel: "Psychology", "perfect": 6, legendText: "sd"},
-//         // {indexLabel: "Visual Arts", y: 6, legendText: "performing arts"},
-//         // {indexLabel: "Engineering", y: 5, legendText: "engineering technologies"},
-//         // {indexLabel: "Biology", y: 5, legendText: "biomedical science"},
-//         // {indexLabel: "Communication", y: 5, legendText: "communications technologies"},
-//         // {indexLabel: "Computers", y: 3.5, legendText: "information sciences and support"},
-//         // {indexLabel: "English", y: 3.5, legendText: "language and literature"},
-//         // {indexLabel: "Liberal Arts", y: 3, legendText: "general studies and humanities"},
-//         // {indexLabel: "Multi", y: 3, legendText: "interdisciplinary studies"},
-//         // {indexLabel: "Law Enforcement", y: 2, legendText: "homeland security, firefighting and related protective services"},
-//         // {indexLabel: "Agriculture", y: 2, legendText: "natural resources"},
-//         // {indexLabel: "Public admin", y: 1.5, legendText: "social service professions"},
-//         // {indexLabel: "Physical Sciences", y: 1.5, legendText: "science technologies"},
-//         // {indexLabel: "Parks Recreation", y: 1, legendText: "leisure and fitness studies"},
-//         // {indexLabel: "Human Sciences", y: 1, legendText: "sfd"},
-//         // {indexLabel: "Foreign Languages", y: 1, legendText: "sdf"},
-//         // {indexLabel: "Other", y: 4, legendText: "all other college majors"}
-        
-// {y: 22}, 
-// {y: 10}, 
-// {y: 8 },
-// {y: 6 },
-// {y: 6 },
-// {y: 5 },
-// {y: 5 },
-// {y: 5 },
-// {y: 3.5},
-// {y: 3.5},
-// {y: 3 },
-// {y: 3 },
-// {y: 2 },
-// {y: 2 },
-// {y: 1.5},
-// {y: 1.5},
-// {y: 1 },
-// {y: 1 },
-// {y: 1 },
-// {y: 4 }
-
-
-//        ]
-//      }
-//      ]
-//    });
-
-//     chart.render();
-//   }
+});
 
 humanSciences = [
   {
@@ -273,7 +272,7 @@ degrees = [
 function womenPerTeam() {
  return  [ 
     {
-      key: "Cumulative Return",
+      key: "Women per team",
       values: [
   {
     "label":"1-9",
@@ -298,7 +297,29 @@ function womenPerTeam() {
       ]
     }
   ]
+}
 
+function womenQuitting() {
+  return [
+  {
+    key: "women quitting",
+    values: [
+      {
+        "label": "Science",
+        "percent": 47
+      },
+      {
+        "label": "Engineering",
+        "percent": 39
+      },
+      {
+        "label": "Technology",
+        "percent": 56
+      }
+    ]
+
+  }
+  ]
 }
 
 </script>
