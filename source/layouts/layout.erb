@@ -64,15 +64,15 @@ nv.addGraph(function() {
         .call(engineerChart);
 
   var womenPerTeamChart = nv.models.discreteBarChart()
+      .margin({left: 100})
       .x(function(d) { return d.label })    //Specify the data accessors.
       .y(function(d) { return d.percent })
+      .forceY([0,100])
       .tooltips(false)        //Don't show tooltips
-      .showValues(true)       //...instead, show the bar value right on top of each bar.
-      .transitionDuration(350)
-      .height(500)
-      .width(1000)
-      .forceY([0,30])
-      .margin({left: 150, bottom: 150})
+      .showValues(true)     
+      // .staggerLabels(true)
+      .valueFormat(function(d){ return percentFormat(d) + "%"})
+      .transitionDuration(0)
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
     womenPerTeamChart.yAxis.axisLabel('Percent').tickFormat(function(d){ return percentFormat(d) + "%";});
     womenPerTeamChart.xAxis.axisLabel('Team Size');
@@ -82,20 +82,19 @@ nv.addGraph(function() {
       .call(womenPerTeamChart);
 
   var womenQuittingChart = nv.models.discreteBarChart()
+      .margin({left: 100})
       .x(function(d) { return d.label })    //Specify the data accessors.
       .y(function(d) { return d.percent })
-      .tooltips(false)        //Don't show tooltips
-      .showValues(true)       //...instead, show the bar value right on top of each bar.
-      .transitionDuration(350)
-      .margin({left: 150})
-      .height(400)
-      .width(700)
       .forceY([0,100])
-
+      .tooltips(false)        //Don't show tooltips
+      .showValues(true)     
+      // .staggerLabels(true)
+      .valueFormat(function(d){ return percentFormat(d) + "%"})
+      .transitionDuration(0)
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
 
     womenQuittingChart.yAxis.axisLabel('Percent').tickFormat(function(d){ return percentFormat(d) + "%";});
-    womenQuittingChart.xAxis.axisLabel('Field').axisLabelDistance(40);
+    womenQuittingChart.xAxis.axisLabel('Field');
 
   d3.select('#womenQuitting svg')
       .datum(womenQuitting())
