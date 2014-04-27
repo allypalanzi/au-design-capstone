@@ -14,6 +14,7 @@
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <%= javascript_include_tag  "nv.d3.min" %>
    <script>
+var percentFormat = d3.format("d");
 nv.addGraph(function() {
   var degreeChart = nv.models.pieChart()
       .x(function(d) { return d.degree })
@@ -71,9 +72,10 @@ nv.addGraph(function() {
       .height(500)
       .width(1000)
       .forceY([0,30])
+      .margin({left: 150, bottom: 150})
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
-    womenPerTeamChart.yAxis.axisLabel('Percent').axisLabelDistance(12);
-    womenPerTeamChart.xAxis.axisLabel('Team Size').axisLabelDistance(75);
+    womenPerTeamChart.yAxis.axisLabel('Percent').tickFormat(function(d){ return percentFormat(d) + "%";});
+    womenPerTeamChart.xAxis.axisLabel('Team Size');
 
   d3.select('#womenPerTeam svg')
       .datum(womenPerTeam())
@@ -85,13 +87,15 @@ nv.addGraph(function() {
       .tooltips(false)        //Don't show tooltips
       .showValues(true)       //...instead, show the bar value right on top of each bar.
       .transitionDuration(350)
+      .margin({left: 150})
       .height(400)
       .width(700)
       .forceY([0,100])
 
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
-    womenPerTeamChart.yAxis.axisLabel('Percent').axisLabelDistance(40);
-    womenPerTeamChart.xAxis.axisLabel('Field').axisLabelDistance(40);
+
+    womenQuittingChart.yAxis.axisLabel('Percent').tickFormat(function(d){ return percentFormat(d) + "%";});
+    womenQuittingChart.xAxis.axisLabel('Field').axisLabelDistance(40);
 
   d3.select('#womenQuitting svg')
       .datum(womenQuitting())
