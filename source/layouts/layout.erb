@@ -75,7 +75,7 @@ nv.addGraph(function() {
       .transitionDuration(0)
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
     womenPerTeamChart.yAxis.axisLabel('Percent').tickFormat(function(d){ return percentFormat(d) + "%";});
-    womenPerTeamChart.xAxis.axisLabel('Team Size');
+    womenPerTeamChart.xAxis.axisLabel('Team Size').tickPadding(10);
 
   d3.select('#womenPerTeam svg')
       .datum(womenPerTeam())
@@ -92,13 +92,14 @@ nv.addGraph(function() {
       .valueFormat(function(d){ return percentFormat(d) + "%"})
       .transitionDuration(0)
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
-
     womenQuittingChart.yAxis.axisLabel('Percent').tickFormat(function(d){ return percentFormat(d) + "%";});
-    womenQuittingChart.xAxis.axisLabel('Field');
+    womenQuittingChart.xAxis.axisLabel('Field').tickPadding(10);
 
   d3.select('#womenQuitting svg')
       .datum(womenQuitting())
       .call(womenQuittingChart);
+
+      return womenQuittingChart
 
 });
 
