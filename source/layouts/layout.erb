@@ -64,7 +64,7 @@ nv.addGraph(function() {
         .call(engineerChart);
 
   var womenPerTeamChart = nv.models.discreteBarChart()
-      .margin({left: 100})
+      .margin({left: 100, bottom: 75})
       .x(function(d) { return d.label })    //Specify the data accessors.
       .y(function(d) { return d.percent })
       .forceY([0,100])
@@ -80,9 +80,11 @@ nv.addGraph(function() {
   d3.select('#womenPerTeam svg')
       .datum(womenPerTeam())
       .call(womenPerTeamChart);
+  // Manually move the x-axis label on the womenPerTeamChart 
+d3.select("#womenPerTeam .nv-x.nv-axis .nv-axislabel") .attr('transform', function(){return 'translate(0, 20)'});
 
   var womenQuittingChart = nv.models.discreteBarChart()
-      .margin({left: 100})
+      .margin({left: 100, bottom: 75})
       .x(function(d) { return d.label })    //Specify the data accessors.
       .y(function(d) { return d.percent })
       .forceY([0,100])
@@ -98,10 +100,13 @@ nv.addGraph(function() {
   d3.select('#womenQuitting svg')
       .datum(womenQuitting())
       .call(womenQuittingChart);
+d3.select("#womenQuitting .nv-x.nv-axis .nv-axislabel") .attr('transform', function(){return 'translate(0, 20)'});
 
       return womenQuittingChart
 
 });
+
+
 
 humanSciences = [
   {
