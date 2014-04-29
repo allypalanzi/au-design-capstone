@@ -10,11 +10,12 @@
     <title><%= current_page.data.title || "Women in Tech" %></title>
     
     <%= stylesheet_link_tag "styles" %>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <%= javascript_include_tag  "all" %>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <%= javascript_include_tag  "nv.d3.min" %>
-   <script>
-var percentFormat = d3.format("d");
+    <script>
+    var percentFormat = d3.format("d");
 nv.addGraph(function() {
   var degreeChart = nv.models.pieChart()
       .x(function(d) { return d.degree })
@@ -24,6 +25,8 @@ nv.addGraph(function() {
       })
       .showLabels(true)     //Display pie labels
       .showLegend(false)
+      // .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
+      // .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
       .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
 
     d3.select("#degrees svg")
@@ -36,7 +39,7 @@ nv.addGraph(function() {
       .y(function(d) { return d.percent })
       .tooltipContent(function (key, y, e, graph) {
           return '<h3>' + Math.round(y) + '%</h3>';
-      })
+      })  
       .showLabels(true)     //Display pie labels
       .showLegend(false)
       .height(400)
@@ -264,9 +267,7 @@ function womenQuitting() {
   }
   ]
 }
-
 </script>
-
 
   </head>
   

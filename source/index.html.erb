@@ -2,13 +2,27 @@
 title: Women in Tech
 ---
 
+<nav>
+  <ul>
+    <li><a href="#intro">intro</a></li>
+    <li><a href="#stories">stories</a></li>
+    <li><a href="#education">education</a></li>
+    <li><a href="#issues">issues</a></li>
+    <li><a href="#ratio">ratio</a></li>
+    <li><a href="#quitting">leaving</a></li>
+    <li><a href="#solutions">solutions</a></li>
+  </ul>
+</nav>
+
 <div class="m-hero">
   <h1 class="m-hero__title">
     We need more women in tech
   </h1>
+  <a class="down" href="#intro"></a>
+
 </div>
 
-<section class="m-section grid">
+<section id="intro" class="m-section grid">
   <div class="m-one">
       <p class="dek">An in-depth look at the gender gap in the tech industry</p>
   </div>
@@ -35,8 +49,14 @@ title: Women in Tech
   </div>
 </section>
 
-<section class="m-section">
-<h2>It starts with education.</h2>
+<section id="stories" class="m-section grid">
+  <div class="m-two-five">
+    <h2>Their stories</h2>
+  </div>
+</section>
+
+<section class="m-section" id="education">
+<h2>It starts with education</h2>
 <h4>What Undergraduates are Studying</h4>
 <div id="degrees">
   <svg></svg>
@@ -45,13 +65,11 @@ title: Women in Tech
   <h4>Health and Human Sciences</h4>
   <svg></svg>
 </div> -->
-<div id="engineering">
-  <h4>Engineering/Computer Science</h4>
-  <svg></svg>
-</div>
+
 
 <!--    <div id="chartContainer" style="height: 600px; width: 100%;">
    </div> -->
+  <div class="break"></div>
 
      <h2>The Pipeline Problem</h2>
 
@@ -61,7 +79,11 @@ title: Women in Tech
       <p>This is called <em>The Pipeline Problem</em> &mdash; this means that because there aren't many women studying engineering, there are just not women available to fill these positions.</p>
     </div>
   </div>
-  <div class="break"></div>
+  <div id="engineering">
+  <h4>Engineering/Computer Science</h4>
+  <svg></svg>
+</div>
+  <div class="break" id="issues"></div>
   <h2>What's stopping them?</h2>
   <div class="grid">
     <div class="m-three">
@@ -73,9 +95,6 @@ title: Women in Tech
     <div class="m-three">
       <p><strong>Issue #3:</strong> 44% of US women believe they have to act like a man to progress in the field.</p>
     </div>
-    <div class="m-one">
-      <p class="segway">The gender bias extends further than just women getting into the field, what about the women who make it through?</p>
-    </div>
   </div>
 </section>
 <section class="m-section grid ramla">
@@ -86,8 +105,8 @@ title: Women in Tech
       <cite>- Ashe Dryden</cite>
   </div>
 </section>
-<section class="m-section">
-  <h2>Women of Tech</h2>
+<section id="ratio" class="m-section">
+  <h2>Woman:Man Ratio in Tech</h2>
   <div class="image-wrap">
       <img src="<%= image_path("women-percent.svg") %>">
     </div>
@@ -95,7 +114,6 @@ title: Women in Tech
   <div class="grid">
     <div class="m-two-five">
       <p>Tech companies employ an average of <span class="percent">12%</span> women. The companies that have the most women, are the ones that are led by women.  Smaller teams tend to have a better male to female developer ratio, but as they grow, this percentage shrinks.</p>
-      <p>Women are also more likely to quit in their first year of working in STEM related careers.</p>
     </div>
   </div>
   <div id="womenPerTeam">
@@ -106,21 +124,21 @@ title: Women in Tech
 
   <div class="grid">
 
-  <div class="m-two-five">
-    <h2>Why are women quitting?</h2>
-    <p>56% of women will quit engineering jobs within the first year of starting their career.</p>
+  <div id="quitting" class="m-two-five">
+    <h2>Why don't women stay?</h2>
+    <p><span class="percent">56%</span> of women will quit engineering jobs within the first year of starting their career.</p>
     <p>
-      Start ups have many qualities that allow for sexist problems to go without mention. Founders and employees are generally friends, which causes a blurry line between work and social life. Most small tech companies don’t have HR departments where employees feeling attacked or alone could turn to.
+      Start ups have many qualities that allow for sexist problems to go without mention. Founders and employees are generally friends, which causes a blurry line between work and social life. Most small tech companies don’t have HR departments where employees feeling attacked or alone can turn to.
     </p>
     <p>
       It can be hard for women to voice their opinions and concerns to a company that is so heavily male dominated.
     </p> 
   </div>
 </div>
-  <div id="womenQuitting">
+<!--   <div id="womenQuitting">
     <h4>Percentage of Women Quitting STEM Jobs</h4>
   <svg></svg>
-</div>
+</div> -->
 </section>
 
 <section class="m-section julie">
@@ -131,6 +149,7 @@ title: Women in Tech
 </h3>
 
 </section>
+<div id="solutions"></div>
 <section class="m-section">
   <h2>The future</h2>
   <div class="grid">
@@ -150,11 +169,25 @@ title: Women in Tech
 
 <section class="m-section red grid">
   <div class="m-one">
-    <h3 class="m-section__quote quote-center">
-      "New research shows that there is no statistically significant difference in earnings between male and female engineers who have the same credentials and make the same choices regarding their career."
-    </h3>
+    <h1>We need to support, encourage, and treat women equally. We need to highlight female engineers as role models. We need more women in tech, and we need your help.</h1>
 </div>
 </section>
+
+<footer>
+  <div class="grid">
+    <div class="m-three">
+      <h2>About the Project</h2>
+<!--       <p>This project was made as my senior design final in May 2014. I wanted to use this as a way  to learn how to work with data and data libraries all while producing something about a field that I’m extremely passionate in.</p> -->
+    </div>    
+    <div class="m-three">
+      <h2>About the Author</h2>
+<!--       <p>I’m Ally Palanzi, a front-end engineer in Washington, DC with a mission to bring more women into technology. I’m active in DC Fem Tech, Girl Develop It, and in the process of starting DC’s first Girls Who Code chapter.</p> -->
+    </div>    
+    <div class="m-three">
+      <h2>More Info</h2>
+    </div>
+  </div>
+  </footer>
 
 
 
