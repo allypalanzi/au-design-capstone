@@ -36,6 +36,10 @@ img {
   margin: 0 auto;
 }
 
+.ratio {
+  margin-bottom: 50px;
+}
+
 .down {
   @include triangle(bottom,20px, $background);
   position: absolute;
@@ -213,7 +217,7 @@ h1 {
   font-weight: 900;
   text-transform: uppercase;
   margin: 0 auto;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 
   @media(max-width: $break-medium) {
     font-size: 60px;
@@ -261,7 +265,7 @@ h1 {
    font-size: 45px;
    line-height: 50px;
    text-align: center;
-   color: #ccc;
+   color: #fff;
    font-style: italic;
    padding: 0px 0 50px 0;
 }
@@ -271,10 +275,11 @@ h1 {
   font-family: "Vollkorn";
   font-style: italic;
   font-weight: 400;
+    max-width: 700px;
+
   &.quote-right {
     float: right;
     margin-top: 5%;
-    max-width: 700px;
     margin-right: 5%;
   }
 
@@ -294,7 +299,6 @@ h1 {
   &.quote-left {
     float: left;
     max-width: 600px;
-    margin-top: 20%;
     margin-left: 5%;
     
     }
@@ -305,7 +309,7 @@ h1 {
   @include prefix(background-size, cover);
   background-attachment: fixed; 
   color: #000;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 40px;
   text-shadow: .5px .5px #fff;
 }
@@ -323,14 +327,10 @@ h1 {
     background: url(../images/ramla-color.jpg); 
   @include prefix(background-size, cover);
   background-attachment: fixed; 
-  color: $red;
-  font-size: 30px;
+  color: #000;
+  font-size: 40px;
   line-height: 40px;
   text-shadow: .5px .5px #fff;
-    h3 {
-      max-width: 70%;
-    }
-
 }
 
 cite {
@@ -370,7 +370,7 @@ height: 450px;
 }
 
 .percent {
-  color: $main-color;
+  color: $red;
   font-size: 30px;
   font-family: $headline;
 }
@@ -423,6 +423,12 @@ footer {
   fill: $main-color;
   font-size: 20px;
   text-transform: uppercase;
+}
+
+.nvd3 .nv-discretebar .nv-groups text {
+  font-family: $headline;
+  font-style: normal;
+  font-size: 25px;
 }
 
 
