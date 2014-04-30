@@ -28,14 +28,15 @@
 
 .nvtooltip {
   position: absolute;
-  background-color: $background;
+  background-color: $red;
   padding: 20px;
   z-index: 10000;
   font-family: "Volkorn";
   font-size: 13px;
   text-align: left;
   pointer-events: none;
-  border: 3px solid $accent-color;
+  border-radius: 3px;
+
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -68,7 +69,7 @@
     margin: 0;
   text-align: center;
   font-family: "Oswald";
-  color: $red;
+  color: $background;
 }
 
 .nvtooltip p {
@@ -335,7 +336,6 @@ svg .title {
 
 .nvd3.nv-pie .hover path {
   fill-opacity: .4;
-  fill: $main-color;
 }
 .nvd3.nv-pie .nv-label {
   pointer-events: none;

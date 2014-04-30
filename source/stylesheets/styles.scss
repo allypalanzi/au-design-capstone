@@ -38,7 +38,8 @@ img {
 
 .down {
   @include triangle(bottom,20px, $background);
-  margin-top: 100px;
+  position: absolute;
+  bottom: 10px;
 }
 
 h2 {
@@ -94,8 +95,10 @@ nav {
     }
   }
   ul {
-      width: 10px;
-  overflow: hidden;
+    width: 10px;
+    overflow: hidden;
+    @include prefix(transition, width .2s);
+
 
   }
   li {
@@ -181,13 +184,15 @@ nav {
   // background: url(../images/ramla-color.jpg);
   // @include prefix(background-size, cover);
   background: $red;
-  padding: 10% 10% 2% 10%;
   text-align: center;
   position: relative;
   z-index: 2;
+  height: 100vh;
 }
 
 h1 {
+  padding: 10% 10% 0 10%;
+
   color: $background;
   font-family: $headline;
   font-size: 70px;
@@ -250,7 +255,6 @@ h1 {
     line-height: 85px;
     padding: 0 10px 0px 5px;
   }
-  padding: 0 0 100px 0;
 }
 
 .dek {
@@ -259,7 +263,7 @@ h1 {
    text-align: center;
    color: #ccc;
    font-style: italic;
-   padding: 100px 0 50px 0;
+   padding: 0px 0 50px 0;
 }
 
 .m-section__quote {
@@ -289,7 +293,7 @@ h1 {
 
   &.quote-left {
     float: left;
-    max-width: 700px;
+    max-width: 600px;
     margin-top: 20%;
     margin-left: 5%;
     
@@ -303,7 +307,7 @@ h1 {
   color: #000;
   font-size: 30px;
   line-height: 40px;
-  // text-shadow: 1px 1px #fff;
+  text-shadow: .5px .5px #fff;
 }
 
 .ngan {
@@ -312,17 +316,17 @@ h1 {
   background-attachment: fixed; 
   color: $red;
   font-size: 60px;
-  text-shadow: 1px 1px #fff;
+  text-shadow: .5px .5px #fff;
 }
 
 .ramla {
     background: url(../images/ramla-color.jpg); 
   @include prefix(background-size, cover);
   background-attachment: fixed; 
-  color: $main-color;
+  color: $red;
   font-size: 30px;
   line-height: 40px;
-    text-shadow: 1px 1px #fff;
+  text-shadow: .5px .5px #fff;
     h3 {
       max-width: 70%;
     }
@@ -331,9 +335,10 @@ h1 {
 
 cite {
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 20px;
   font-style: italic;
+  letter-spacing: 1px;
 }
 
 
@@ -382,6 +387,31 @@ footer {
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+  }
+}
+
+.m-section__todo {
+  a {
+    background: $main-color;
+    color: $background;
+    display: block;
+    font-family: $headline;
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    @include prefix(transition, background .5s);
+    &:hover {
+      @include prefix(transition, background .5s);
+      background: $red;
+    }
+  }
+  p {
+    text-align: center;
+    
   }
 }
 

@@ -16,6 +16,16 @@
     <%= javascript_include_tag  "nv.d3.min" %>
     <script>
     var percentFormat = d3.format("d");
+    var colorRange = function(num) { 
+      var color = d3.scale.linear()
+          .domain([0,1])
+          .range(["#378dca","#ffffff"]); 
+      var l = []; 
+      for (var i = 0; i < num+1; i ++) { 
+        l.push(color(i/num)); 
+      } 
+      return l; 
+    }
 nv.addGraph(function() {
   var degreeChart = nv.models.pieChart()
       .x(function(d) { return d.degree })
@@ -27,7 +37,7 @@ nv.addGraph(function() {
       .showLegend(false)
       // .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
       // .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
-      .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
+      .color(colorRange(20));
 
     d3.select("#degrees svg")
         .datum(degrees)
@@ -59,7 +69,8 @@ nv.addGraph(function() {
       .showLabels(true)     //Display pie labels
       .showLegend(false)
       .height(400)
-      .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
+      .color(colorRange(5));
+
 
     d3.select("#engineering svg")
         .datum(engineering)
@@ -76,7 +87,8 @@ nv.addGraph(function() {
       // .staggerLabels(true)
       .valueFormat(function(d){ return percentFormat(d) + "%"})
       .transitionDuration(0)
-      .color(["#edd6d8","#edc3c6","#edabb0","#ed949a","#ed7a82","#ed646f","#ed515d","#ed3543","#ed2635","#ed1525"]);
+      .color(colorRange(7));
+
     womenPerTeamChart.yAxis.axisLabel('Percent').tickFormat(function(d){ return percentFormat(d) + "%";});
     womenPerTeamChart.xAxis.axisLabel('Team Size').tickPadding(10);
 
