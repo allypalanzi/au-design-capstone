@@ -71,6 +71,7 @@ p {
   line-height: 32px;
   color: #333;
   margin-bottom: 30px;
+  font-weight: 400;
 }
 
 em {
@@ -383,8 +384,22 @@ footer {
   p {
     color: #fff;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 26px;
     text-align: center;
+  }
+  a {
+    text-align: center;
+    display: block;
+    color: $accent-color;
+    font-family: "Vollkorn";
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    @include prefix(transition, color .2s);
+    &:hover {
+      @include prefix(transition, color .2s);
+      color: $main-color;
+    }
   }
 }
 
@@ -411,6 +426,14 @@ footer {
     text-align: center;
     
   }
+}
+
+.highlight {
+  font-style: italic;
+  font-size: 25px;
+  line-height: 28px;
+  background: $accent-color;
+  padding: 1px 3px;
 }
 
 @import "nv.d3.min";
