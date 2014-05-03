@@ -164,12 +164,14 @@ nav {
 .m-two-five {
   @extend %grid-u-2-5;
   margin: 0 auto;
+  display: block;
   @media(max-width: $break-medium) {
     padding: 0 20px;
   }
 }
 
 .m-one {
+  display: block;
   @extend %grid-u-4-5;
   margin: 0 auto;
   @media(max-width: $break-medium) {
